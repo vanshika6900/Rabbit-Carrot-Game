@@ -34,11 +34,14 @@ function Sort() {
     readOut("Help Rabbit to reach the carrot");
   }, []);
   // ============ FUNCTION TO GENERATE RANDOM NUMBERS ============
+
   const generateNumbers = () => {
-    const randomNumbers = Array.from({ length: 5 }, () =>
-      Math.floor(Math.random() * 100)
-    );
-    setNumbers(randomNumbers);
+    const generatedNumbers = new Set(); // Using a Set to store unique numbers
+    while (generatedNumbers.size < 5) {
+      const randomNumber = Math.floor(Math.random() * 100);
+      generatedNumbers.add(randomNumber);
+    }
+    setNumbers(Array.from(generatedNumbers));
     setSortedNumbers([]);
   };
 

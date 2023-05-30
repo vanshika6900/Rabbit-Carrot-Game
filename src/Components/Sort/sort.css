@@ -163,3 +163,10 @@
     margin-left: -40px;
   }
 }
+@media (max-width: 1057px) {
+  .outer-div {
+    margin-top: -315px;
+    z-index: 2;
+    position: relative;
+  }
+}

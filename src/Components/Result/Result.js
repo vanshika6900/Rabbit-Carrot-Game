@@ -14,25 +14,8 @@ function Result() {
       />
       {/* ============= SHOWING WRONG ANSWER IF ANSWER IS FALSE ELSE CORRECT ANSWER =============  */}
       {!location.state.answer ? (
-        <div
-          style={{
-            width: "100%",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            position: "absolute",
-            top: "0",
-            flexDirection: "column",
-          }}
-        >
-          <div
-            style={{
-              margin: "50px 0px",
-              fontWeight: "600",
-              fontSize: "25px",
-              fontFamily: "cursive",
-            }}
-          >
+        <div className="result-container">
+          <div className="result-msg">
             Oops! Wrong Answer. Rabbit did not got the carrot !!
           </div>
           <button className="try" onClick={() => navigate("/")}>
@@ -41,29 +24,12 @@ function Result() {
           <img
             src="https://weddingkj.s3.ap-south-1.amazonaws.com/website/ezgif.com-webp-to-jpg-removebg-preview.png"
             alt=""
-            style={{ marginTop: "45px" }}
+            className="result-image-sad"
           />
         </div>
       ) : (
-        <div
-          style={{
-            width: "100%",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            position: "absolute",
-            top: "0",
-            flexDirection: "column",
-          }}
-        >
-          <div
-            style={{
-              margin: "50px 0px",
-              fontWeight: "600",
-              fontSize: "25px",
-              fontFamily: "cursive",
-            }}
-          >
+        <div className="result-container">
+          <div className="result-msg">
             Yayy! Correct Answer. Rabbit got the carrot !!
           </div>
           <button className="try" onClick={() => navigate("/")}>
@@ -72,7 +38,7 @@ function Result() {
           <img
             src="https://weddingkj.s3.ap-south-1.amazonaws.com/website/happy-rabbit-removebg-preview.png"
             alt=""
-            style={{ marginTop: "25px", height: "500px" }}
+            className="result-img-happy"
           />
         </div>
       )}
